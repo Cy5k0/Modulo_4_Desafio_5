@@ -8,4 +8,4 @@ class DimensionError(Exception):
     def __str__(self):
         if self.dimension is not None and self.maximo is not None:
             return f"{self.mensaje}: {self.dimension} (máximo permitido: {self.maximo})"
-        return self.mensaje
+        return super().__str__()
