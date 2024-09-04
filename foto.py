@@ -14,7 +14,8 @@ class Foto:
         return self.__ancho
 
     @ancho.setter
-    def ancho(self, ancho) -> None:
+    @ancho.setter
+    def ancho(self, ancho:int) -> None:
         if ancho < 1 or ancho > Foto.MAX:
             raise DimensionError("Ancho no válido", ancho, Foto.MAX)
         self.__ancho = ancho
@@ -24,10 +25,11 @@ class Foto:
         return self.__alto
 
     @alto.setter
-    def alto(self, alto) -> None:
+    def alto(self, alto:int) -> None:
         if alto < 1 or alto > Foto.MAX:
             raise DimensionError("Alto no válido", alto, Foto.MAX)
-        self.__alto = alto
+        else:
+            self.__alto = alto
 
 
 ruta = input("Ingrese ruta de la imagen: ")
