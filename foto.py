@@ -31,16 +31,20 @@ class Foto:
             self.__alto = alto
 
 
-ruta = input("Ingrese ruta de la imagen: ")
-int_ancho = int(input("Ingrese ancho de la imagen: "))
-int_alto = int(input("Ingrese alto de la imagen: "))
-fotos = Foto(int_alto, int_ancho, ruta)
-print(fotos.alto)
-print(fotos.ancho)
-int_ancho = int(input("Ingrese nuevo ancho de la imagen: "))
-int_alto = int(input("Ingrese nuevo alto de la imagen: "))
 
-fotos.ancho = int_ancho
-print(fotos.ancho)
-fotos.alto = int_alto
-print(fotos.alto)
+try:
+    ruta=input("Ingrese ruta de la imagen: ")
+    int_ancho=int(input("Ingrese ancho de la imagen: "))
+    int_alto=int(input("Ingrese alto de la imagen: "))
+    fotos = Foto(int_ancho,int_alto , ruta)
+    print(fotos.alto)
+    print(fotos.ancho)
+    int_ancho=int(input("Ingrese nuevo ancho de la imagen: "))
+    int_alto=int(input("Ingrese nuevo alto de la imagen: "))
+
+    fotos.ancho=int_ancho
+    print(fotos.ancho)
+    fotos.alto=int_alto
+    print(fotos.alto)
+except:
+    print(DimensionError)
