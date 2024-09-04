@@ -30,12 +30,19 @@ class Foto():
 
 
 
+
+
 ruta=input("Ingrese ruta de la imagen: ")
-ancho=int(input("Ingrese ancho de la imagen: "))
-alto=(input("Ingrese alto de la imagen: "))
-fotos = Foto(alto, ancho, ruta)
-ancho=int(input("Ingrese nuevo ancho de la imagen: "))
-alto=(input("Ingrese nuevo alto de la imagen: "))
-fotos.alto=alto
-fotos.ancho=ancho
+int_ancho=int(input("Ingrese ancho de la imagen: "))
+int_alto=(input("Ingrese alto de la imagen: "))
+fotos = Foto(int_alto, int_ancho, ruta)
+print(fotos.alto)
+print(fotos.ancho)
+int_ancho=int(input("Ingrese nuevo ancho de la imagen: "))
+int_alto=int(input("Ingrese nuevo alto de la imagen: "))
+
+fotos.ancho=int_ancho
+print(fotos.ancho)
+fotos.alto=int_alto
+print(fotos.alto)
 
