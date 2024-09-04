@@ -1,7 +1,7 @@
 from error import DimensionError
 
 class Foto():
-    MAX = 3500
+    MAX = 2500
 
     def __init__(self, ancho: int, alto: int, ruta: str) -> None:
         self.__ancho = ancho
