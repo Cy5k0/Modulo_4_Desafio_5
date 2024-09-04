@@ -3,3 +3,8 @@ class DimensionError(Exception):
         self.mensaje = mensaje
         self.dimension = dimension
         self.maximo = maximo
+
+    def __str__(self):
+        if self.dimension is not None and self.maximo is not None:
+            return f"{self.mensaje}: {self.dimension} (máximo permitido: {self.maximo})"
+        return self.mensaje
