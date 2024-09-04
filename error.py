@@ -3,6 +3,7 @@ class DimensionError(Exception):
         self.mensaje = mensaje
         self.dimension = dimension
         self.maximo = maximo
+        super().__init__(mensaje)
 
     def __str__(self):
         if self.dimension is not None and self.maximo is not None:
