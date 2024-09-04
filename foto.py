@@ -31,7 +31,6 @@ class Foto:
             self.__alto = alto
 
 
-
 try:
     ruta=input("Ingrese ruta de la imagen: ")
     int_ancho=int(input("Ingrese ancho de la imagen: "))
@@ -46,5 +45,9 @@ try:
     print(fotos.ancho)
     fotos.alto=int_alto
     print(fotos.alto)
-except:
-    print(DimensionError)
+except (DimensionError) as e:
+    print(e)
+except (ValueError):
+    print("Ha ocurrido un error al ingresar los valores") 
+except Exception as e:
+   print(f"Ha ocurrido un error inesperado: {e}")
