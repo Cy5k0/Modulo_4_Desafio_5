@@ -1,6 +1,7 @@
 from error import DimensionError
 
-class Foto():
+
+class Foto:
     MAX = 2500
 
     def __init__(self, ancho: int, alto: int, ruta: str) -> None:
@@ -29,13 +30,17 @@ class Foto():
         self.__alto = alto
 
 
+try:
+    fotos = Foto(0, 2000, "c:\\mis fotos\\xxx.jpg")
+except DimensionError as e:
+    print(e)
 
-ruta=input("Ingrese ruta de la imagen: ")
-ancho=int(input("Ingrese ancho de la imagen: "))
-alto=(input("Ingrese alto de la imagen: "))
-fotos = Foto(alto, ancho, ruta)
-ancho=int(input("Ingrese nuevo ancho de la imagen: "))
-alto=(input("Ingrese nuevo alto de la imagen: "))
-fotos.alto=alto
-fotos.ancho=ancho
 
+# ruta=input("Ingrese ruta de la imagen: ")
+# ancho=int(input("Ingrese ancho de la imagen: "))
+# alto=(input("Ingrese alto de la imagen: "))
+# fotos = Foto(alto, ancho, ruta)
+# ancho=int(input("Ingrese nuevo ancho de la imagen: "))
+# alto=(input("Ingrese nuevo alto de la imagen: "))
+# fotos.alto=alto
+# fotos.ancho=ancho
