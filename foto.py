@@ -13,7 +13,7 @@ class Foto:
 
     MAX = 2500
 
-    def __init__(self, ancho: int, alto: int, ruta: str) -> None:
+    def __init__(self, path: str,ancho: int, alto: int) -> None:
         """Inicializa una instancia de la clase Foto.
 
         Args:
@@ -24,10 +24,21 @@ class Foto:
         Raises:
             DimensionError: Si el ancho o alto están fuera del rango permitido.
         """
+        self._ruta = None
+        self._ancho = None
+        self._alto = None
         self.__ancho = ancho
         self.__alto = alto
-        ruta = ruta
+        self._ruta = path
 
+    @property
+    def ruta(self):
+        return self._ruta
+
+    @ruta.setter
+    def ruta(self, value):
+        self._ruta = value
+        
     @property
     def ancho(self) -> int:
         """Obtiene el ancho de la fotografía.
@@ -75,21 +86,22 @@ class Foto:
         else:
             self.__alto = alto
 
-
 try:
-    ruta = input("Ingrese ruta de la imagen: ")
+    strruta = str(input("Ingrese ruta de la imagen: "))
     int_ancho = int(input("Ingrese ancho de la imagen: "))
     int_alto = int(input("Ingrese alto de la imagen: "))
-    fotos = Foto(int_ancho, int_alto, ruta)
-    print(fotos.alto)
-    print(fotos.ancho)
+    print(f"xxx:{strruta}")
+    fotos = Foto(strruta,int_ancho, int_alto)
+    print(f"alto de la foto: {fotos.alto}")
+    print(f"ancho de la foto: {fotos.ancho}")
+    print(f"ruta de la foto: {fotos.ruta}")
     int_ancho = int(input("Ingrese nuevo ancho de la imagen: "))
     int_alto = int(input("Ingrese nuevo alto de la imagen: "))
 
     fotos.ancho = int_ancho
-    print(fotos.ancho)
+    print(f"ancho de la foto: {fotos.ancho}")
     fotos.alto = int_alto
-    print(fotos.alto)
+    print(f"alto de la foto: {fotos.alto}")
 except DimensionError as e:
     print(e)
 except ValueError:
